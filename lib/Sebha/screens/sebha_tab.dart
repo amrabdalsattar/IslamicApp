@@ -1,3 +1,4 @@
+import 'package:assignment_five_flutter/Sebha/Widgets/body_components.dart';
 import 'package:flutter/material.dart';
 import '../data/colors.dart';
 import '../data/image_path.dart';
@@ -27,6 +28,7 @@ class SebhaTab extends StatelessWidget {
           ),
           centerTitle: true,
         ),
+        body: BodyComponents(),
       ),
     );
   }

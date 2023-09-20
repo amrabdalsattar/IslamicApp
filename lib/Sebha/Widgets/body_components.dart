@@ -33,9 +33,7 @@ class _BodyComponentsState extends State<BodyComponents> {
       )),
       child: Column(
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
-          ),
+
           ButtonGenerator(
             widget: const Sebha(),
             onPressed: () {

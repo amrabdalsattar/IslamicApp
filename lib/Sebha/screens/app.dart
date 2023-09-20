@@ -1,3 +1,4 @@
+import 'package:assignment_five_flutter/Sebha/data/icons.dart';
 import 'package:assignment_five_flutter/Sebha/data/image_path.dart';
 import 'package:flutter/material.dart';
 
@@ -20,9 +21,9 @@ class _MyAppState extends State<MyApp> {
       home: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(ImagePath.path["backGround"]!),
-              fit: BoxFit.cover,
-            )),
+          image: AssetImage(ImagePath.path["backGround"]!),
+          fit: BoxFit.cover,
+        )),
         child: Scaffold(
           backgroundColor: ColorsGenerator.transparent,
           appBar: AppBar(
@@ -37,9 +38,28 @@ class _MyAppState extends State<MyApp> {
             ),
             centerTitle: true,
           ),
-          body: BodyComponents(),
+          bottomNavigationBar: buildBottomNavigationBar(),
         ),
       ),
     );
   }
+
+  Widget buildBottomNavigationBar() => Theme(
+    data: ThemeData(canvasColor: ColorsGenerator.primary),
+    child: BottomNavigationBar(
+      selectedItemColor: ColorsGenerator.accent,
+
+          iconSize: 30,
+          items: [
+            BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(AppIcons.icQuran)), label: "Quran"),
+            BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(AppIcons.icAhadeth)), label: "Ahadeth"),
+            BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(AppIcons.icSebha)), label: "Sebha"),
+            BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(AppIcons.icRadio)), label: "Radio")
+          ],
+        ),
+  );
 }
