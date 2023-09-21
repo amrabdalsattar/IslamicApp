@@ -8,28 +8,9 @@ class SebhaTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(ImagePath.path["backGround"]!),
-            fit: BoxFit.cover,
-          )),
-      child: Scaffold(
-        backgroundColor: ColorsGenerator.transparent,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: ColorsGenerator.transparent,
-          title: const Text(
-            "إسلامي",
-            style: TextStyle(
-              fontSize: 30,
-              color: ColorsGenerator.black,
-            ),
-          ),
-          centerTitle: true,
-        ),
-        body: BodyComponents(),
-      ),
+    return Scaffold(
+      backgroundColor: ColorsGenerator.transparent,
+      body: BodyComponents(),
     );
   }
 }
