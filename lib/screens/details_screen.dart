@@ -43,9 +43,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
           centerTitle: true,
         ),
         body: fileContent.isEmpty
-            ? const CircularProgressIndicator(
-                color: ColorsGenerator.primary,
-              )
+            ? const Center(
+              child: CircularProgressIndicator(
+                  color: ColorsGenerator.primary,
+                ),
+            )
             : Align(
                 alignment: Alignment.center,
                 child: Container(

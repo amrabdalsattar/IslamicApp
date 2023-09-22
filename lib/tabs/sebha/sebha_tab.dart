@@ -1,6 +1,8 @@
+
 import 'package:flutter/material.dart';
 import '../../data/azkar.dart';
 import '../../data/colors.dart';
+import '../../data/image_path.dart';
 import 'Widgets/button_generator.dart';
 import 'Widgets/sebha.dart';
 import 'Widgets/text_generator.dart';
@@ -16,6 +18,7 @@ class _SebhaTabState extends State<SebhaTab> {
   int zekrCounter = 0;
   String zekr = Azkar.azkar[0];
   int counter = 0;
+  double rotationAngle = 0.0; // Initialize the rotation angle
 
   @override
   Widget build(BuildContext context) {
@@ -23,25 +26,35 @@ class _SebhaTabState extends State<SebhaTab> {
       backgroundColor: ColorsGenerator.transparent,
       body: Column(
         children: [
-          ButtonGenerator(
-            widget: const Sebha(),
-            onPressed: () {
-              setState(() {
-                if (counter < 32) {
-                  counter += 1;
-                } else {
-                  counter = 0;
-                  if (zekrCounter < Azkar.azkar.length - 1) {
-                    zekrCounter += 1;
+          Container(
+              margin: const EdgeInsets.only(top: 15),
+              child: Image.asset(ImagePath.sebhaHead)),
+          Transform.rotate(
+            angle: rotationAngle,
+            child: ButtonGenerator(
+              widget: const Sebha(),
+              onPressed: () {
+                setState(() {
+                  rotationAngle += (1 / 5); // Increase the rotation angle
+                });
+
+                setState(() {
+                  if (counter < 32) {
+                    counter += 1;
                   } else {
-                    zekrCounter = 0;
+                    counter = 0;
+                    if (zekrCounter < Azkar.azkar.length - 1) {
+                      zekrCounter += 1;
+                    } else {
+                      zekrCounter = 0;
+                    }
+                    zekr = Azkar.azkar[zekrCounter];
                   }
-                  zekr = Azkar.azkar[zekrCounter];
-                }
-              });
-            },
+                });
+              },
+            ),
           ),
-          TextGenerator(
+          const TextGenerator(
               text: "عدد التسبيحات",
               textColor: ColorsGenerator.black,
               backGroundColor: ColorsGenerator.transparent),

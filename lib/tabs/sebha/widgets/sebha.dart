@@ -10,11 +10,7 @@ class Sebha extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(ImagePath.sebhaHead),
         Image.asset(ImagePath.sebhaBody),
-        const SizedBox(
-          height: 20,
-        )
       ],
     );
   }
