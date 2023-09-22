@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Tabs/Ahadeth/ahadeth_tab.dart';
 import '../Tabs/Quran/quran_tab.dart';
-import '../Tabs/Radio/radio_tab.dart';
 import '../Tabs/Sebha/sebha_tab.dart';
 import '../Tabs/Settings/settings_tab.dart';
 import '../data/colors.dart';
@@ -15,7 +14,6 @@ class HomeScreen extends StatefulWidget {
     QuranTab(),
     AhadethTab(),
     SebhaTab(),
-    RadioTab(),
     SettingTab()
   ];
 
@@ -72,10 +70,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: "Ahadeth"),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AppIcons.icSebha)), label: "Sebha"),
-            BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(AppIcons.icRadio)), label: "Radio"),
             const BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Radio"),
+                icon: Icon(Icons.settings), label: "Settings"),
           ],
         ),
       );
