@@ -10,6 +10,8 @@ class AhadethTab extends StatelessWidget {
     thickness: 3,
     color: ColorsGenerator.primary,
   );
+
+  const AhadethTab({super.key});
   // List<String> ahadethNames =
   //     List.generate(50, (index) => "الحديث رقم ${index + 1}");
 

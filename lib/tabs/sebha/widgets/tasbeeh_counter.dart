@@ -1,13 +1,13 @@
 import 'package:assignment_five_flutter/Tabs/Sebha/Widgets/text_generator.dart';
+import 'package:assignment_five_flutter/data/colors.dart';
 import 'package:flutter/material.dart';
 
 class TasbeehCounter extends StatelessWidget {
-  void function;
   int counter = 0;
 
   final Color color = const Color.fromARGB(255, 200, 180, 151);
 
-  final Color transparent = Colors.transparent;
+  TasbeehCounter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +21,8 @@ class TasbeehCounter extends StatelessWidget {
       child: Center(
         child: TextGenerator(
           text: "$counter",
-          textColor: Colors.black,
-          backGroundColor: transparent,
+          textColor: ColorsGenerator.black,
+          backGroundColor: ColorsGenerator.transparent,
         ),
       ),
     );

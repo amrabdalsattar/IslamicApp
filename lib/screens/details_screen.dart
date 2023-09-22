@@ -9,6 +9,8 @@ import '../data/colors.dart';
 class DetailsScreen extends StatefulWidget {
   static const String routeName = "details_screen";
 
+  const DetailsScreen({super.key});
+
   @override
   State<DetailsScreen> createState() => _DetailsScreenState();
 }

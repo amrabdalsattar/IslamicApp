@@ -11,10 +11,10 @@ class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
   static int currentTabIndex = 0;
   static List<Widget> tabs = [
-    QuranTab(),
-    AhadethTab(),
-    SebhaTab(),
-    SettingTab()
+    const QuranTab(),
+    const AhadethTab(),
+    const SebhaTab(),
+    const SettingTab()
   ];
 
   const HomeScreen({super.key});
@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           selectedItemColor: ColorsGenerator.accent,
           iconSize: 30,
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AppIcons.icQuran)), label: "Quran"),
             BottomNavigationBarItem(
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: "Ahadeth"),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AppIcons.icSebha)), label: "Sebha"),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
                 icon: Icon(Icons.settings), label: "Settings"),
           ],
         ),

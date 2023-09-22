@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class MyApp extends StatelessWidget {
   static int currentTabIndex = 0;
 
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

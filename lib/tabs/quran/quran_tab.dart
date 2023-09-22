@@ -12,6 +12,8 @@ class QuranTab extends StatelessWidget {
     color: ColorsGenerator.primary,
   );
 
+  const QuranTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(

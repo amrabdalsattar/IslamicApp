@@ -6,6 +6,8 @@ import 'Widgets/sebha.dart';
 import 'Widgets/text_generator.dart';
 
 class SebhaTab extends StatefulWidget {
+  const SebhaTab({super.key});
+
   @override
   State<SebhaTab> createState() => _SebhaTabState();
 }

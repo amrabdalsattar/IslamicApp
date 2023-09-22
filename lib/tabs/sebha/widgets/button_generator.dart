@@ -6,7 +6,7 @@ class ButtonGenerator extends StatelessWidget {
   final Widget? widget;
   final VoidCallback onPressed;
 
-  ButtonGenerator({Key? key, required this.widget, required this.onPressed})
+  const ButtonGenerator({Key? key, required this.widget, required this.onPressed})
       : super(key: key);
 
   @override

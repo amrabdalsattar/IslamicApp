@@ -4,12 +4,12 @@ class TextGenerator extends StatelessWidget {
   final String text;
   final Color textColor;
   final Color backGroundColor;
-  double? width;
-  double? height;
-  FontWeight normal;
-  double? fontSize;
+  final double? width;
+  final double? height;
+  final FontWeight normal;
+  final double? fontSize;
 
-  TextGenerator(
+  const TextGenerator(
       {super.key,
       required this.text,
       required this.textColor,

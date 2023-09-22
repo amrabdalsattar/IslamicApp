@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 abstract class AppIcons {
   static const String icQuran = "assets/images/icon_quran.png";
   static const String icAhadeth = "assets/images/icon_hadeth.png";
