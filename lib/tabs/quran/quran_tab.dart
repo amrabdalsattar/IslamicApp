@@ -1,16 +1,13 @@
 import 'package:assignment_five_flutter/Model/details_args.dart';
 import 'package:assignment_five_flutter/Screens/details_screen.dart';
-import 'package:assignment_five_flutter/data/app_theme.dart';
-import 'package:assignment_five_flutter/data/colors.dart';
 import 'package:assignment_five_flutter/data/image_path.dart';
 import 'package:flutter/material.dart';
-import '../../data/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../data/constants.dart';
 
 class QuranTab extends StatelessWidget {
-  static const Divider divider = Divider(
-    thickness: 3,
-    color: ColorsGenerator.primary,
-  );
+  static const Divider divider = Divider();
 
   const QuranTab({super.key});
 
@@ -21,9 +18,9 @@ class QuranTab extends StatelessWidget {
       children: [
         Expanded(flex: 3, child: Image.asset(ImagePath.quranScreenLogo)),
         divider,
-        const Text(
-          "Sura Name",
-          style: AppTheme.quranTabTitleTextStyle,
+        Text(
+          AppLocalizations.of(context)!.suraName,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         divider,
         Expanded(
@@ -38,19 +35,20 @@ class QuranTab extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(context, DetailsScreen.routeName,
                             arguments: DetailsScreenArguments(
-                                fileName: "${index+1}.txt",
+                                fileName: "${index + 1}.txt",
                                 isQuran: true,
                                 titleName: Constants.suraNames[index]));
                       },
                       child: Text(
                         Constants.suraNames[index],
-                        style: AppTheme.quranTabTitleTextStyle
+                        style: Theme.of(context).textTheme.bodyMedium!
                             .copyWith(fontWeight: FontWeight.normal),
                         textAlign: TextAlign.center,
                       ),
                     ),
                     const Divider(
                       thickness: 1,
+                      color: Color.fromARGB(103, 158, 158, 158),
                     )
                   ],
                 );

@@ -1,82 +1,81 @@
-
+import 'package:assignment_five_flutter/settings_provider/settings_provider.dart';
 import 'package:flutter/material.dart';
-import '../../data/azkar.dart';
-import '../../data/colors.dart';
-import '../../data/image_path.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../../data/colors.dart';
+import '../../../data/image_path.dart';
 import 'Widgets/button_generator.dart';
 import 'Widgets/sebha.dart';
 import 'Widgets/text_generator.dart';
 
-class SebhaTab extends StatefulWidget {
-  const SebhaTab({super.key});
-
-  @override
-  State<SebhaTab> createState() => _SebhaTabState();
-}
-
-class _SebhaTabState extends State<SebhaTab> {
-  int zekrCounter = 0;
-  String zekr = Azkar.azkar[0];
-  int counter = 0;
-  double rotationAngle = 0.0; // Initialize the rotation angle
+class SebhaTab extends StatelessWidget {
+  late String zekr;
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of(context);
+    zekr = provider.azkar[0];
     return Scaffold(
       backgroundColor: ColorsGenerator.transparent,
       body: Column(
         children: [
+          ///Sebha Head
           Container(
               margin: const EdgeInsets.only(top: 15),
-              child: Image.asset(ImagePath.sebhaHead)),
+              child: Image.asset(provider.currentMode == ThemeMode.light
+                  ? ImagePath.sebhaHead
+                  : ImagePath.darkSebhaHead)),
+
+          /// Sebha Body and the Button
           Transform.rotate(
-            angle: rotationAngle,
+            angle: provider.rotationAngle,
             child: ButtonGenerator(
               widget: const Sebha(),
               onPressed: () {
-                setState(() {
-                  rotationAngle += (1 / 5); // Increase the rotation angle
-                });
-
-                setState(() {
-                  if (counter < 32) {
-                    counter += 1;
-                  } else {
-                    counter = 0;
-                    if (zekrCounter < Azkar.azkar.length - 1) {
-                      zekrCounter += 1;
-                    } else {
-                      zekrCounter = 0;
-                    }
-                    zekr = Azkar.azkar[zekrCounter];
-                  }
-                });
+                provider.incrementCounter();
               },
             ),
           ),
-          const TextGenerator(
-              text: "عدد التسبيحات",
-              textColor: ColorsGenerator.black,
+
+          /// "Tasbeeh Count" (Title Text)
+          TextGenerator(
+              text: AppLocalizations.of(context)!.tasbeehCount,
+              textColor: provider.currentMode == ThemeMode.light
+                  ? ColorsGenerator.black
+                  : Colors.white,
               backGroundColor: ColorsGenerator.transparent),
+
+          /// Tasbeeh Counter
           Container(
             decoration: BoxDecoration(
-              color: ColorsGenerator.liteCaffeColor,
+              color: provider.currentMode == ThemeMode.light
+                  ? ColorsGenerator.liteCaffeColor
+                  : ColorsGenerator.darkBlue,
               borderRadius: BorderRadius.circular(30),
             ),
             width: 69,
             height: 81,
             child: Center(
               child: TextGenerator(
-                text: "$counter",
-                textColor: Colors.black,
+                text: "${provider.counter}",
+                textColor: provider.currentMode == ThemeMode.light
+                    ? ColorsGenerator.black
+                    : Colors.white,
                 backGroundColor: ColorsGenerator.transparent,
               ),
             ),
           ),
+
+          /// Azkar
           TextGenerator(
-            text: Azkar.azkar[zekrCounter],
-            textColor: ColorsGenerator.white,
-            backGroundColor: ColorsGenerator.primary,
+            text: provider.azkar[provider.zekrCounter],
+            textColor: provider.currentMode == ThemeMode.light
+                ? ColorsGenerator.white
+                : ColorsGenerator.black,
+            backGroundColor: provider.currentMode == ThemeMode.light
+                ? ColorsGenerator.primary
+                : ColorsGenerator.accentDark,
             height: 51,
             width: 137,
             normal: FontWeight.normal,

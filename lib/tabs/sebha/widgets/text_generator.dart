@@ -30,8 +30,11 @@ class TextGenerator extends StatelessWidget {
       child: Center(
           child: Text(
         text,
-        style:
-            TextStyle(fontWeight: normal, fontSize: fontSize, color: textColor),
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+          fontWeight: normal,
+          fontSize: fontSize,
+          color: textColor,
+        ),
       )),
     );
   }
