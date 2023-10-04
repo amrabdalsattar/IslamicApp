@@ -22,6 +22,8 @@ class HomeScreen extends StatefulWidget {
     const SettingTab()
   ];
 
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }

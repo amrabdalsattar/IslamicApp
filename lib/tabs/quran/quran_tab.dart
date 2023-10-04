@@ -1,5 +1,6 @@
 import 'package:assignment_five_flutter/Model/details_args.dart';
 import 'package:assignment_five_flutter/Screens/details_screen.dart';
+import 'package:assignment_five_flutter/data/colors.dart';
 import 'package:assignment_five_flutter/data/image_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -39,9 +40,15 @@ class QuranTab extends StatelessWidget {
                                 isQuran: true,
                                 titleName: Constants.suraNames[index]));
                       },
+                      style: ButtonStyle(
+                        overlayColor:
+                            MaterialStateProperty.all(ColorsGenerator.buttonOverLay),
+                      ),
                       child: Text(
                         Constants.suraNames[index],
-                        style: Theme.of(context).textTheme.bodyMedium!
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
                             .copyWith(fontWeight: FontWeight.normal),
                         textAlign: TextAlign.center,
                       ),

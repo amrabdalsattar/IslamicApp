@@ -1,4 +1,5 @@
 import 'package:assignment_five_flutter/data/app_theme.dart';
+import 'package:assignment_five_flutter/screens/splash_screen.dart';
 import 'package:assignment_five_flutter/settings_provider/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -31,8 +32,10 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme,
         routes: {
           HomeScreen.routeName: (_) => HomeScreen(),
-          DetailsScreen.routeName: (_) => const DetailsScreen()
+          DetailsScreen.routeName: (_) => const DetailsScreen(),
+          SplashScreen.routeName: (_) => const SplashScreen()
         },
+        initialRoute: SplashScreen.routeName,
         debugShowCheckedModeBanner: false,
         home: HomeScreen());
   }

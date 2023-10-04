@@ -12,6 +12,8 @@ import 'Widgets/text_generator.dart';
 class SebhaTab extends StatelessWidget {
   late String zekr;
 
+  SebhaTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     SettingsProvider provider = Provider.of(context);

@@ -46,7 +46,9 @@ abstract class AppTheme {
       dividerTheme:
           const DividerThemeData(thickness: 2, color: ColorsGenerator.primary),
       appBarTheme: const AppBarTheme(
-
+          iconTheme: IconThemeData(
+              color: ColorsGenerator.black
+          ),
           centerTitle: true,
           backgroundColor: ColorsGenerator.transparent,
           elevation: 0,
@@ -63,6 +65,7 @@ abstract class AppTheme {
           bodyLarge: ayatContentTextStyle));
 
   static ThemeData darkTheme = ThemeData(
+
       switchTheme: SwitchThemeData(
           overlayColor: MaterialStateProperty.all(ColorsGenerator.primaryDark)),
       scaffoldBackgroundColor: ColorsGenerator.transparent,
@@ -70,6 +73,9 @@ abstract class AppTheme {
       dividerTheme: const DividerThemeData(
           thickness: 2, color: ColorsGenerator.accentDark),
       appBarTheme: const AppBarTheme(
+        iconTheme: IconThemeData(
+          color: ColorsGenerator.white
+        ),
           centerTitle: true,
           backgroundColor: ColorsGenerator.transparent,
           elevation: 0,

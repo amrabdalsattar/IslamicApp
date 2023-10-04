@@ -13,4 +13,5 @@ class ColorsGenerator {
   static const Color accentDark = Color.fromARGB(255, 248, 202, 30);
   static const Color darkBlue = Color.fromARGB(255, 21, 28, 51);
   static const Color darkBlueForContainer = Color.fromARGB(128, 21, 28, 51);
+  static const Color buttonOverLay = Color.fromARGB(27, 182, 146, 95);
 }

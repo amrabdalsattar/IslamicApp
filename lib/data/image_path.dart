@@ -10,4 +10,6 @@ class ImagePath {
   static const String radioIcon = "assets/images/icon_radio.png";
   static const String quranScreenLogo = "assets/images/qur2an_screen_logo.png";
   static const String ahadethScreenLogo = "assets/images/hadeth_logo.png";
+  static const String splashScreen = "assets/images/splash.png";
+  static const String darkSplashScreen = "assets/images/dark_splash.png";
 }
