@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   late SettingsProvider provider;
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 5)).then((value) => {
+    Future.delayed(const Duration(seconds: 2)).then((value) => {
       Navigator.pushReplacementNamed(context, HomeScreen.routeName)
     });
     super.initState();

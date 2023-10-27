@@ -31,12 +31,12 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         routes: {
-          HomeScreen.routeName: (_) => HomeScreen(),
+          HomeScreen.routeName: (_) => const HomeScreen(),
           DetailsScreen.routeName: (_) => const DetailsScreen(),
           SplashScreen.routeName: (_) => const SplashScreen()
         },
         initialRoute: SplashScreen.routeName,
         debugShowCheckedModeBanner: false,
-        home: HomeScreen());
+        home: const HomeScreen());
   }
 }
